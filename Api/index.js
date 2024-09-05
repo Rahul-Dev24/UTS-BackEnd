@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.route.js";
 const app = express();
-
+let port = process.env.PORT || 4040;
 dotenv.config();
 app.use(express.json());
 
@@ -28,6 +28,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("server Started in 3000");
+app.listen(port, () => {
+  console.log("server Started in",port);
 });
