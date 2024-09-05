@@ -8,7 +8,10 @@ dotenv.config();
 app.use(express.json());
 
 mongoose
-  .connect(process.env.DATABASE_ULI)
+  .connect(process.env.DATABASE_ULI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(() => {
     console.log("connected Successfully");
   })
