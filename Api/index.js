@@ -5,8 +5,9 @@ import authRouter from "./routes/auth.route.js";
 import cors from "cors";
 const app = express();
 dotenv.config();
-let port = process.env.PORT || 4040;
+
 app.use(express.json());
+let port = process.env.PORT || 4040;
 
 mongoose
   .connect(process.env.DATABASE_ULI, {
