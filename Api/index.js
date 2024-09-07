@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.route.js";
 const app = express();
-let port = process.env.PORT || 4040;
 dotenv.config();
 app.use(express.json());
+let port = process.env.PORT || 4040;
 
 mongoose
   .connect(process.env.DATABASE_ULI, {
