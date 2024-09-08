@@ -9,9 +9,9 @@ export const signup = async (req, res, next) => {
   const newUser = new User({ phoneNo, name, password: hashPass, gender, dob });
   try {
     await newUser.save();
-    res.status(201).json({ message: "User created sucessfully" });
+    res.status(201).json({ message: "Register sucessfully" });
   } catch (err) {
-    next(err);
+    next(errorHandler(401, "Registeration Failed"));
   }
 };
 
@@ -30,6 +30,6 @@ export const Login = async (req, res, next) => {
       .status(200)
       .json(rest);
   } catch (err) {
-    next(err);
+    next(errorHandler(401, "Login Failed"));
   }
 };
