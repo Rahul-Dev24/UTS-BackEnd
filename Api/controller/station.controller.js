@@ -33,7 +33,7 @@ export const getStation = async (req, res, next) => {
   try {
     // Extract page and limit from query parameters
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 15;
+    const limit = parseInt(req.query.limit) || 50;
 
     // Ensure limit is positive
     if (limit <= 0) {
