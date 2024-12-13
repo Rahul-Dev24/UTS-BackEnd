@@ -1,6 +1,6 @@
 import express from "express";
-import { insertTrain, getTrainById } from "../controller/train.controller.js";
-import { getNewTicket, getTicket,getTrain } from "../controller/ticket.controller.js";
+import { insertTrain, getTrainById,getTrain } from "../controller/train.controller.js";
+import { getNewTicket, getTicket } from "../controller/ticket.controller.js";
 
 const trainRouter = express.Router();
 
