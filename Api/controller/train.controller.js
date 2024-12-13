@@ -12,6 +12,15 @@ export const getTrainById = async (req, res, next) => {
     }
 };
 
+export const getTrain = async (req, res, next) => {
+    try {
+        const train = await Train.find();
+        res.status(201).json(train);
+    } catch (err) {
+        next(errorHandler(401, "Train Failed to add."));
+    }
+};
+
 export const insertTrain = async (req, res, next) => {
     const { trainNumber, origin, destination, stops, distance, fare, zone, originCode, destinationCode } = req.body;
     const stopsList = await Station.find({ code: { "$in": [...stops] } });
