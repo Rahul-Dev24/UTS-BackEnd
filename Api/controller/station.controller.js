@@ -47,7 +47,7 @@ export const getStation = async (req, res, next) => {
     const skip = (page - 1) * limit;
 
     // Fetch the paginated records
-    const stations = await Station.find().skip(skip).limit(limit).exec();
+    const stations = req?.query.sort ? await Station.find().skip(skip).limit(limit).exec().sort({name:'A'}) :await Station.find().skip(skip).limit(limit).exec();
 
     // Send response
     res.json(stations);
