@@ -14,7 +14,7 @@ export const getTrainById = async (req, res, next) => {
 
 export const getTrain = async (req, res, next) => {
     try {
-        const train = await Train.find().sort({createdAt:1}).toArray();
+        const train = await Train.find();
         res.status(201).json(train);
     } catch (err) {
         next(errorHandler(401, "Train Failed to add."));
